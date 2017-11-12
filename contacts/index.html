@@ -1,54 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Contacts search</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
+<meta charset="UTF-8">
+<title>Chess Players</title>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <div id='content'></div>
+	<div id='content'></div>
 
-    <script type="text/babel">
+	<script type="text/babel">
 
         var CONTACTS = [
             {
                 id: 1,
-                name: 'Darth Vader',
-                phoneNumber: '+250966666666',
-                image: 'img/darth.gif'
+                name: 'Mangus Carlsen',
+                liveYears: '',
+                image: 'img/carlsen.png'
             }, {
                 id: 2,
-                name: 'Princess Leia',
-                phoneNumber: '+250966344466',
-                image: 'img/leia.gif'
+                name: 'Gary Kasparov',
+                liveYears: '',
+                image: 'img/kasparov.png'
             }, {
                 id: 3,
-                name: 'Luke Skywalker',
-                phoneNumber: '+250976654433',
-                image: 'img/luke.gif'
+                name: 'Bobby Fissher',
+                liveYears: '1943-2008',
+                image: 'img/fisher.png'
             }, {
                 id: 4,
-                name: 'Chewbacca',
-                phoneNumber: '+250456784935',
-                image: 'img/chewbacca.gif'
+                name: 'Anatoly Karpov',
+                liveYears: '',
+                image: 'img/karpov_1979.jpg'
             }, {
                 id: 5,
-                name: 'Chewbacca',
-                phoneNumber: '+250456784935',
-                image: 'img/chewbacca.gif'
+                name: 'Levon Aronian',
+                liveYears: '',
+                image: 'img/aronian.jpg'
             }, {
                 id: 6,
-                name: 'Chewbacca',
-                phoneNumber: '+250456784935',
-                image: 'img/chewbacca.gif'
+                name: 'Hikaru Nakamura',
+                liveYears: '',
+                image: 'img/nakamura.png'
             }, {
                 id: 7,
-                name: 'Chewbacca',
-                phoneNumber: '+250456784935',
-                image: 'img/chewbacca.gif'
+                name: 'Alexander Alekhine',
+                liveYears: '1892-1946',
+                image: 'img/alekhine.png'
+            }, {
+                id: 8,
+                name: 'Vladimir Kramnik',
+                liveYears: '',
+                image: 'img/kramnik.png'
+            }, {
+                id: 9,
+                name: 'Boris Spassky',
+                liveYears: '',
+                image: 'img/spassky.png'
+            }, {
+                id: 10,
+                name: 'Vishvanathan Anand',
+                liveYears: '',
+                image: 'img/anand.jpg'
+            }, {
+                id: 11,
+                name: 'Paul Morphy',
+                liveYears: '1837-1884',
+                image: 'img/morphy.jpg'
+            }, {
+                id: 12,
+                name: 'José Raúl Capablanca',
+                liveYears: '1888-1942',
+                image: 'img/capablanca.jpg'
             }
         ];
 
@@ -56,10 +84,10 @@
             render: function() {
                 return (
                     <li className="contact">
-                        <img className="contact-image" src={this.props.image} width="60px" height="60px" />
+                        <img className="contact-image" src={this.props.image} width="32px" height="32px" />
                         <div className="contact-info">
                             <div className="contact-name"> {this.props.name} </div>
-                            <div className="contact-number"> {this.props.phoneNumber} </div>
+                            <div className="contact-number"> {this.props.liveYears} </div>
                         </div>
                     </li>
                 );
@@ -95,7 +123,7 @@
                                     return <Contact
                                         key={el.id}
                                         name={el.name}
-                                        phoneNumber={el.phoneNumber}
+                                        liveYears={el.liveYears}
                                         image={el.image}
                                     />;
                                })
